@@ -1,0 +1,141 @@
+
+
+/*
+ *   Adavance calulator  program ,
+ *   in this program we create 4 member method in  class Cal and 
+ *   also add extra member method using iheritance properties 
+ *   and craete object of child class , accessed both properties chid and parent class.
+ * 
+ *  OUTPUT: System.out.println("Press 1 for addtion: ");
+         System.out.println("Press 2 for subtraction: ");
+         System.out.println("Press 3 for multipliction: ");
+         System.out.println("Press 4 for divition: ");
+         System.out.println("Press 5 for Square: ");
+         System.out.println("Press 6 for Cube: ");
+         System.out.println("Enter your choice: ");
+         5
+         Enter a number
+         5
+         Square: 25
+         Press 0 if you want to continue process:
+         0
+         System.out.println("Press 1 for addtion: ");
+         System.out.println("Press 2 for subtraction: ");
+         System.out.println("Press 3 for multipliction: ");
+         System.out.println("Press 4 for divition: ");
+         System.out.println("Press 5 for Square: ");
+         System.out.println("Press 6 for Cube: ");
+         System.out.println("Enter your choice: ");
+         6
+         Enter a number:
+         5
+         Cube: 125
+          Press 0 if you want to continue process:
+          2
+          exit the program
+
+ * 
+ */
+
+
+
+import java.util.Scanner;
+
+class Cal
+{
+     void sum(float a,float b)
+     {
+        System.out.println("Sum : "+(a+b));
+     }
+     void sub(float a,float b)
+     {
+        System.out.println("Subtration: "+(a-b));
+     }
+     void mul(float a,float b)
+     {
+        System.out.println("Multiplication: "+(a*b));
+     }
+     void div(float a,float b) 
+     {
+        System.out.println("Division : "+(a/b));
+     }
+}
+
+
+class Advance_Cal extends Cal
+{
+    void square(float a)
+    {
+        System.out.println("Power: "+(a*a));
+    }
+    void cube(float a)
+    {
+        System.out.println("Cube: "+(a*a*a)); 
+    }
+}
+
+public class Advance_Calulater 
+   {
+    public static void main(String arg[])
+    {
+         float x,y;
+         int n,choice;
+         Advance_Cal obj=new Advance_Cal();
+         Scanner sc=new Scanner(System.in);
+         do
+         {
+         
+         System.out.println("Press 1 for addtion: ");
+         System.out.println("Press 2 for subtraction: ");
+         System.out.println("Press 3 for multipliction: ");
+         System.out.println("Press 4 for divition: ");
+         System.out.println("Press 5 for Square: ");
+         System.out.println("Press 6 for Cube: ");
+         System.out.println("Enter your choice: ");
+        
+         n=sc.nextInt();
+         switch(n)
+         {
+            case 1:
+                System.out.println("Enter two numbers:  ");
+                x=sc.nextFloat();
+                y=sc.nextFloat();
+                obj.sum(x,y);
+                break;
+            case 2:
+                System.out.println("Enter two numbers:  ");
+                x=sc.nextFloat();
+                y=sc.nextFloat();
+                obj.sub(x,y);
+                break;
+            case 3:
+                System.out.println("Enter two numbers:  ");
+                 x=sc.nextFloat();
+                y=sc.nextFloat();
+                obj.mul(x,y);
+                break;
+            case 4:
+                System.out.println("Enter two numbers:  ");
+                x=sc.nextFloat();
+                y=sc.nextFloat();
+                obj.div(x,y);
+                break;
+            case 5:
+                System.out.println("Enter a  numbers:  ");
+                x=sc.nextFloat();
+                obj.square(x);
+                break;
+            case 6:
+                System.out.println("Enter a numbers:  ");
+                x=sc.nextFloat();
+                obj.cube(x);
+                break;
+
+                 
+         }
+         System.out.println("Press 0 if you want to continue process: ");
+         choice=sc.nextInt();
+
+    }while(choice==0);
+}
+}
