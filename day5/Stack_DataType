@@ -1,0 +1,102 @@
+/*
+Performed following task
+1.push(): for inserting data
+2.pop(): for deleting data
+3.display(): for showing data
+
+*/
+import java.util.Scanner;
+class StackOperation
+{
+    int n=10;
+    int top=-1;
+    int a[]=new int[n];
+    void push(Scanner sc)
+    {
+        if(top==n-1)
+        {
+            System.out.println("OverFlow");
+        }
+        else
+        {
+            int choice;
+            do
+            {
+            System.out.print("Input data  :");
+            int n2=sc.nextInt();
+            top=top+1;
+            a[top]=n2;
+            System.out.println("Data inserted ");
+            System.out.print("If you want to insert more data press 0: ");
+            choice=sc.nextInt();
+            }while(choice==0);   
+            System.out.println();
+        }
+        
+
+    }
+
+    void pop()
+    {
+        if(top==-1)
+        {
+            System.out.println("Under flow  ");
+
+        }
+        else
+         {
+            top=top-1;
+            System.out.println("item deleted  ");
+       }
+    }    
+    
+     void display()
+    {
+        if(top==-1)
+        {
+            System.out.println("Stack are empety :");
+
+        }
+        else
+        {                                                              
+            for(int i=top;i>=0;i--)
+            {
+                System.out.print(a[i]+" ");
+            }
+        }
+    }
+}
+
+public class Stack
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        StackOperation obj=new StackOperation();
+        int a,choice;
+        do
+     {
+        System.out.println("Press 1 for insert data: ");
+        System.out.println("Press 2 for delete data: ");
+        System.out.println("Press 3 for Show data : ");
+        System.out.println("Enter your choice : ");
+        choice=sc.nextInt();
+        switch(choice)
+        {
+            case 1:
+                obj.push(sc);
+                break;
+            case 2:
+                obj.pop();
+                break;
+            case 3:
+                obj.display();
+                break;
+        }
+        System.out.println("If want to continue process then press 0 : ");
+        a=sc.nextInt();
+      }while(a==0);
+    }
+}
+Footer
+© 2022 GitHub, Inc.
