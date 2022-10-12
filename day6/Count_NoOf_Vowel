@@ -1,0 +1,48 @@
+/*
+In this program we find number of vowel from sentense that are inpputed by user.
+
+
+Test case 1:
+Enter string: I am prem
+No of vowel in given sentence is 3
+Test pass
+Test case 2:
+Enter string: i am prem
+No of vowel in given sentence is 3
+Test pass
+Test case 3:
+Enter string: I AM PREM
+No of vowel in given sentence is 3
+Test pass
+*/
+import java.util.Scanner;
+public class Count_NoOfVowel 
+{    
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+         System.out.print("Enter string: ");
+         String str1=sc.nextLine();
+         String str=str1.toLowerCase();
+
+         Count b1=new Count();
+         System.out.println("No of vowel in given sentence is "+b1.vowel(str));
+    }
+}
+class Count
+{
+   int count=0;
+   int vowel(String str2)
+   {
+   
+     for(int i=0;i<str2.length();i++)
+     {
+        if(str2.charAt(i)=='a'||str2.charAt(i)=='e'||str2.charAt(i)=='i'||
+        str2.charAt(i)=='o'||str2.charAt(i)=='u')
+        {
+        count++;
+        }
+     }
+     return count;
+   }
+}
