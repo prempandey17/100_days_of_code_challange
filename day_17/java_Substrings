@@ -1,0 +1,39 @@
+/*
+Given a string,s, and two indices,start  and end, print a substring consisting of all characters in the inclusive range from start end-1  to .
+You'll find the String class' substring method helpful in completing this
+
+Constraints
+   1<=|s|<=100
+   0<= start < end <=n
+   
+Sample Input
+
+   Helloworld
+    3 7
+Sample Output
+
+   lowo
+Explanation
+
+   In the diagram below, the substring is highlighted in green:
+
+*/
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        int start = in.nextInt();
+        int end = in.nextInt();
+        String S1 = S.substring(start,end);
+        System.out.println(S1);
+    }
+}
+
