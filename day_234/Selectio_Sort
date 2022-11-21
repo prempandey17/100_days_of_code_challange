@@ -1,0 +1,80 @@
+/* perform selection sort 
+   take a Sort class and inside it make metodhs as sort(),swap() and diplay()
+   and called these metods by main metods for perfoarm sorting
+   test case 1: 
+             input element: 5 ,4 ,3 , 2, 1
+             output element: 1, 2, 3, 4, 5
+             */
+
+
+
+
+
+
+import java.util.*;
+public class Selection_Sort 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size of array : ");
+        int max=sc.nextInt();
+        int[] ar=new int[max];
+        System.out.println("Enter no. of element : ");
+        for(int i=0;i<ar.length;i++)
+        {
+            ar[i]=sc.nextInt();
+        }
+        Sort s1=new Sort();
+        //s1.sort(ar);
+        System.out.println("Element before sorting");
+        s1.display(ar);
+        System.out.println();
+        System.out.println("Element after sorting : ");
+        s1.display(s1.sort(ar));
+
+    }
+      
+}
+class Sort
+{
+    public void swap(int[] arr2,int n1,int n2)
+    {
+        
+        int temp;
+        temp=arr2[n1];
+        arr2[n1]=arr2[n2];
+        arr2[n2]=temp;
+    }
+
+    public void display(int[] arr1)
+    {
+        for(int i=0;i<arr1.length;i++)
+        {
+             System.out.print(arr1[i]+"  ");
+        }
+    }
+    public int[] sort(int[] arr)
+    {
+        int min_index;
+        for(int i=0;i<arr.length-1;i++)
+        {
+            min_index=i;
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[min_index]>arr[j])
+                {
+                    min_index=j;
+                }
+            }
+            if(arr[min_index]<arr[i])
+            {
+                
+                swap(arr,min_index,i);
+                
+            }
+           
+        }
+         return arr;
+    }
+}
