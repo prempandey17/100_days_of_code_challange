@@ -1,0 +1,59 @@
+*/
+      this is a tree program in which we perform tree creation and Preorder traversal operation
+
+      for these we take two classes 1st is taken for main method and prform operation 
+      and  2nd class is taken for create doubly linklist type data.
+
+      */
+      
+import java.util.Scanner;
+public class Tree_Preorder_Traversal 
+{
+      static Node create()
+      {
+            Scanner sc=new Scanner(System.in);
+            Node root=null;
+            System.out.println("Enter values: ");
+           
+            int data=sc.nextInt();
+            if(data==-1)
+               return null;
+            root=new Node(data);
+            System.out.println("Enter left child of root "+root.data);
+            root.left=create();
+            System.out.println("Enter right child of root "+root.data);
+            root.right=create();
+            return root;
+
+      }   
+      static void preorder(Node root)
+      {
+        if(root==null) return;
+        System.out.print(root.data+" ");
+
+        preorder(root.left);
+        preorder(root.right);
+
+      }
+      public static void main(String[] args)
+      {
+         Node root=create();
+         System.out.println("Preorder tree trversal:  ");
+         preorder(root);
+
+      }
+}
+
+class Node{
+    int data;
+    Node left,right;
+    public Node(int data)
+    {
+        this.data=data;
+        left=null;
+        right=null;
+    }
+}
+
+    
+
