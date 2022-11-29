@@ -1,0 +1,63 @@
+*/
+      this is a tree program in which we perform tree creation and Postorder traversal operation
+
+      for these we take two classes 1st is taken for main method and prform operation 
+      and  2nd class is taken for create doubly linklist type data.
+
+      */
+      
+import java.util.Scanner;
+public class Tree_Postorder_Traversal 
+{
+          static Node create()
+          {
+                Scanner sc=new Scanner(System.in);
+                Node root=null;
+                System.out.println("Enter values: ");
+               
+                int data=sc.nextInt();
+                if(data==-1)
+                   return null;
+                root=new Node(data);
+                System.out.println("Enter left child of root "+root.data);
+                root.left=create();
+                System.out.println("Enter right child of root "+root.data);
+                root.right=create();
+                return root;
+    
+          }   
+          static void postorder(Node root)
+          {
+            if(root==null) return;
+            postorder(root.left);
+           
+            postorder(root.right);
+            System.out.print(root.data+" ");
+          }
+          public static void main(String[] args)
+          {
+             Node root=create();
+             System.out.println("Inorder tree trversal:  ");
+             postorder(root);
+    
+          }
+    }
+    
+    class Node{
+        int data;
+        Node left,right;
+        public Node(int data)
+        {
+            this.data=data;
+            left=null;
+            right=null;
+        }
+    }
+    
+        
+    
+       
+
+
+
+
