@@ -1,0 +1,32 @@
+// Code
+
+import java.util.*;
+public class StringQuestion2 {
+
+	public static void main(String[] args) {
+		String s = "ababc";
+		String Q = "51234";
+		int k = 5;
+		HashSet<String> h = new HashSet<String>();
+		for(int i=0;i<s.length();i++) {
+			int sum = 0;
+			String s1 = "";
+			for(int j=0;i<s.length();j++) {
+				int position = s.charAt(j) - 'a';
+				sum += Q.charAt(position) - '0';
+				
+				if(sum<=k) {
+					s1 += s.charAt(j);
+					h.add(s1);
+				}
+				else {
+					break;
+				}
+			}
+		}
+		System.out.println(h);
+		System.out.println(h.size());
+
+	}
+
+}
